@@ -1,15 +1,15 @@
-const http = require('http')
 const express = require('express')
 const cors = require('cors')
-const router = require('./router')
+// const nodemailer = require('nodemailer')
 
+const router = express.Router()
 const app = express()
-const server = http.createServer(app)
 
 app.use(cors())
-app.options('*', cors())
-app.use(router)
+app.use(express.json())
+app.use('/', router)
+// app.options('*', cors())
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5050
 
-server.listen(port, () => console.log(`Server is up on port *: ${port}`))
+app.listen(port, () => console.log(`Server is up on port *: ${port}`))
