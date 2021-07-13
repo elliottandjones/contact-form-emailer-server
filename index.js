@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const { EMAILADDRESS, PASSWORD } = require('./.env')
 // const nodemailer = require('nodemailer')
 
 const router = express.Router()
