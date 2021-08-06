@@ -1,17 +1,18 @@
 const nodemailer = require('nodemailer')
+const { EMAILADDRESS, PASSWORD } = require('./.env')
 
 async function sendEmail() {
   const hostname = 'hostname from account page'
-  const username = 'username from account page'
-  const password = 'password from account page'
+  const emailaddress = EMAILADDRESS
+  const password = PASSWORD
 
   const transporter = nodemailer.createTransport({
     host: hostname,
-    port: 587,
+    port: 5057,
     secure: false,
     requireTLS: true,
     auth: {
-      user: username,
+      user: emailaddress,
       pass: password,
     },
     logger: true,
@@ -21,7 +22,7 @@ async function sendEmail() {
   const info = await transporter.sendMail({
     from: '"Sender Name" <from@example.net>',
     to: 'to@example.com',
-    subject: 'Hello from node',
+    subject: '🌠🌠🌠',
     text: 'Hello world?',
     html: '<strong>Hello world?</strong>',
     headers: { 'x-myheader': 'test header' },

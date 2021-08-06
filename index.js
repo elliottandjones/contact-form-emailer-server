@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const { EMAILADDRESS, PASSWORD } = require('./.env')
+// const { EMAILADDRESS, PASSWORD } = require('./.env')
 // const nodemailer = require('nodemailer')
 
 const router = express.Router()
@@ -13,4 +13,4 @@ app.use('/', router)
 
 const port = process.env.PORT || 5050
 
-app.listen(port, () => console.log(`Server is up on port *: ${port}`))
+app.listen(port, () => console.log(`Server is listening on port *: ${port}`, process.env))
